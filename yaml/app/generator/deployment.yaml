@@ -6,7 +6,7 @@ metadata:
     demo: "true"
   name: generator
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: generator
@@ -18,7 +18,7 @@ spec:
         instrumentation.opentelemetry.io/inject-python: "true"
     spec:
       containers:
-      - image: jamesgresql/opentelemetry-demo-u_generator:0.7
+      - image: stugee/generator:0.1
         name: generator
         ports:
         - containerPort: 5000

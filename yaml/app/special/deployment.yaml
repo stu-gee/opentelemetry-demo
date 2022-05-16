@@ -6,7 +6,7 @@ metadata:
     demo: "true"
   name: special
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: special
@@ -18,7 +18,7 @@ spec:
         instrumentation.opentelemetry.io/inject-python: "true"
     spec:
       containers:
-      - image: jamesgresql/opentelemetry-demo-u_special:0.2
+      - image: stugee/special:0.1
         name: special
         ports:
         - containerPort: 5000

@@ -6,7 +6,7 @@ metadata:
     demo: "true"
   name: digit
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: digit
@@ -18,7 +18,7 @@ spec:
         instrumentation.opentelemetry.io/inject-python: "true"
     spec:
       containers:
-      - image: jamesgresql/opentelemetry-demo-u_digit:0.2
+      - image: stugee/digit:0.1
         name: digit
         ports:
         - containerPort: 5000

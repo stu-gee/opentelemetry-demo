@@ -6,8 +6,7 @@ metadata:
   name: lower
 spec:
   ports:
-  - name: app
-    port: 5000
+  - port: 5000
     targetPort: 5000
   selector:
     app: lower

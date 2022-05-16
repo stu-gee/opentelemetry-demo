@@ -6,7 +6,7 @@ metadata:
     demo: "true"
   name: lower
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: lower
@@ -19,7 +19,7 @@ spec:
         instrumentation.opentelemetry.io/inject-python: "true"
     spec:
       containers:
-      - image: jamesgresql/opentelemetry-demo-u_lower:0.2
+      - image: stugee/lower:0.1
         name: lower
         ports:
         - containerPort: 5000

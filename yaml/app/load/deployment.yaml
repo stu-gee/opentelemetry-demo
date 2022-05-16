@@ -17,6 +17,6 @@ spec:
         instrumentation.opentelemetry.io/inject-python: "true"
     spec:
       containers:
-      - image: jamesgresql/opentelemetry-demo-u_load:0.3
+      - image: stugee/load:0.1
         name: load
       restartPolicy: Always

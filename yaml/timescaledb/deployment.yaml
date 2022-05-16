@@ -24,22 +24,15 @@ spec:
           value: trust
         - name: POSTGRES_USER
           value: postgres
-        image: timescale/timescaledb-ha:pg14-latest
+        image: stugee/timescaledb:0.1
         name: timescaledb
         ports:
         - containerPort: 5432
-        resources: {}
         volumeMounts:
         - mountPath: /var/lib/postgresql/data
-          name: timescaledb-data
-        - mountPath: /docker-entrypoint-initdb.d/
-          name: timescaledb-bootstrap
       restartPolicy: Always
       serviceAccountName: ""
       volumes:
       - name: timescaledb-data
         persistentVolumeClaim:
           claimName: timescaledb-data
-      - name: timescaledb-bootstrap
-        configMap:
-          name: timescaledb-bootstrap
